@@ -1,0 +1,300 @@
+/* Global */
+html { scroll-behavior: smooth; }
+:root { scroll-padding-top: 80px; }
+
+/* Navbar / header layering */
+#mainNav{
+    background-color: transparent;
+    z-index: 9999 !important;
+    transition: transform 0.35s ease, background-color 0.3s ease;
+}
+
+#mainNav.scrolled{
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+#mainNav.nav-hidden{ transform: translateY(-100%); }
+
+header.masthead{
+    position: relative;
+    z-index: 1;
+}
+
+#mainNav .dropdown-menu{ z-index: 10001 !important; }
+#mainNav .dropdown{ position: relative; z-index: 10000 !important; }
+
+/* FIX: Search mos mbulojë Menu */
+.navbar-search{
+    flex: 1 1 auto;
+    max-width: 520px;
+    min-width: 180px;
+}
+.nav-actions{
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 10050;
+}
+
+/* Search bar */
+#searchInput{
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
+}
+#searchInput::placeholder{ color: rgba(255, 255, 255, 0.9); }
+#searchInput:focus{
+    background-color: rgba(255, 255, 255, 0.35);
+    border-color: #fff;
+    color: #fff;
+    box-shadow: none;
+}
+
+/* Navbar Icons */
+.nav-icons{
+    display:flex;
+    gap:16px;
+    align-items:center;
+}
+.icon-link{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    padding:0 6px;
+    line-height:1.1;
+}
+.icon-circle{
+    width:40px;
+    height:40px;
+    border:2px solid currentColor;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:6px;
+}
+.icon-circle i{ font-size:18px; }
+.icon-text{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.04em;
+}
+#mainNav .icon-link{ color: inherit; }
+#mainNav .icon-link:hover{ opacity: 0.85; }
+
+@media (max-width: 991.98px){
+    .nav-icons{ display:none; }
+    .navbar-search{ max-width: 100%; }
+}
+
+/* Books section title */
+.books-title{
+    font-family: Merriweather, serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+/* Layout: sipas skices (rreshta + shigjete) */
+.genre-section { margin-bottom: 42px; }
+
+.genre-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom: 12px;
+}
+
+.genre-title{
+    font-family: Merriweather, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 0;
+}
+
+/* wrapper rreshti + shigjeta */
+.slider-wrap{ position: relative; }
+
+/* rreshti horizontal */
+.books-row{
+    display:flex;
+    gap:18px;
+    overflow-x:auto;
+    padding: 6px 56px 12px 6px; /* hapesire per butonin > */
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+.books-row .book-card{
+    min-width: 220px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+}
+
+/* butoni > */
+.slider-next{
+    position:absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #111;
+    background: #fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    z-index:5;
+    font-size: 22px;
+    line-height: 1;
+}
+.slider-next:hover{ transform: translateY(-50%) scale(1.06); }
+
+/* Book card styles (nje version i vetem) */
+.book-card{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.book-cover{
+    position: relative;
+    background: #f2f2f2;
+    border-radius: 16px;
+    padding: 14px;
+    height: 240px;
+    overflow: hidden;
+}
+
+.book-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* badge "I ri" */
+.book-badge{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #0b3b86;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    z-index: 3;
+}
+
+/* butonat mbi foto */
+.book-actions{
+    position: absolute;
+    inset: 12px 12px auto 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    z-index: 4;
+    pointer-events: auto;
+}
+
+.book-btn{
+    border: 0;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 10px 12px;
+    font-weight: 700;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    pointer-events: auto;
+}
+
+.book-btn.add-cart{
+    background: rgba(11, 59, 134, 0.95);
+    color: #fff;
+}
+
+.book-btn.wishlist{
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    background: rgba(255,255,255,0.92);
+    color: #111;
+}
+
+.book-btn.wishlist.active{
+    background: rgba(220,53,69,0.95);
+    color: #fff;
+}
+
+/* tekstet poshte kartes */
+.book-name{
+    margin-top: 14px;
+    font-weight: 800;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.book-meta{
+    margin: 4px 0 0;
+    color: #0b63ce;
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+.book-price{
+    margin-top: 6px;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+/* Responsive: rreshtat mbeten horizontal, thjesht kartat zvogelojne pak */
+@media (max-width: 768px){
+    .genre-title{ font-size: 30px; }
+    .books-row .book-card{ min-width: 190px; }
+    .book-cover{ height: 220px; }
+}
+/* Fix final: Te gjitha fotot e librave te duken me te njejten madhesi */
+
+/* Kartat e librave – madhesi fikse */
+.books-row .book-card{
+    width: 220px;
+    flex: 0 0 220px;
+}
+
+/* Kutia e fotos – gjithmone e njejte */
+.book-cover{
+    width: 100%;
+    height: 300px;          /* 👈 lartesia fikse */
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f2f2f2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fotoja mbush kutine njejsoj per te gjithe */
+.book-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* 👈 ky eshte SEKRETI */
+    display: block;
+}
+
+/* Tekstet poshte librave – uniforme */
+.book-name{
+    min-height: 42px;
+}
+
+.book-meta{
+    min-height: 18px;
+}

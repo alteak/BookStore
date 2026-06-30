@@ -1,0 +1,262 @@
+/* BookStore Admin Theme - Blue Tonal  */
+
+
+:root{
+  /* Core surfaces (blue-tinted neutrals) */
+  --bg:     #dde9ff;   /* page background (very light blue) */
+  --panel:  #ffffff;   /* cards/panels */
+  --panel2: #eaf1ff;   /* headers/topbars/table head */
+
+  /* Lines & text */
+  --border: #c7d6f2;   /* soft blue border */
+  --text:   #0f1f3a;   /* deep navy text */
+  --muted:  #556b8a;   /* muted blue-gray */
+
+  /* Accent blues */
+  --sky:  #2f6fed;     /* primary accent */
+  --sky2: #1f4fbf;     /* stronger accent (hover/active) */
+
+  /* Semantic */
+  --danger:  #e04b5a;
+  --success: #2f8f5b;
+}
+
+html, body{ height:100%; }
+
+body{
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: "Times New Roman", Times, serif !important;
+}
+
+/* Fix Bootstrap muted */
+.text-muted{ color: var(--muted) !important; }
+
+/* Links */
+a{ color: var(--sky) !important; }
+a:hover{ color: var(--sky2) !important; }
+
+/* Headings */
+h1,h2,h3,h4,h5,h6{ color: var(--text) !important; }
+
+/* Rounded for UI (IMPORTANT: don't target all inputs; exclude checkbox/radio) */
+.card, .alert, .table, .form-control, .form-select, textarea,
+input[type="text"], input[type="email"], input[type="password"], input[type="number"],
+input[type="date"], input[type="datetime-local"], input[type="search"]{
+  border-radius: 12px;
+}
+
+/* Cards */
+.card{
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  box-shadow: 0 8px 22px rgba(15,31,58,0.06);
+}
+
+/* Alerts */
+.alert{
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  background: #fff !important;
+}
+.alert-info{
+  background: rgba(47,111,237,0.10) !important;
+  border-color: rgba(47,111,237,0.30) !important;
+}
+.alert-success{
+  background: rgba(47,143,91,0.12) !important;
+  border-color: rgba(47,143,91,0.28) !important;
+}
+.alert-danger{
+  background: rgba(224,75,90,0.12) !important;
+  border-color: rgba(224,75,90,0.30) !important;
+}
+.alert-warning{
+  background: rgba(255,193,7,0.16) !important;
+  border-color: rgba(255,193,7,0.40) !important;
+}
+
+/* Tables */
+.table{
+  color: var(--text) !important;
+  background: var(--panel) !important;
+  border-color: var(--border) !important;
+}
+.table thead th{
+  background: var(--panel2) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+.table td, .table th{ border-color: var(--border) !important; }
+
+.table-striped>tbody>tr:nth-of-type(odd)>*{
+  background: rgba(15,31,58,0.03) !important;
+  color: var(--text) !important;
+}
+
+/* FORMS – use light-blue tint so inputs don't look "white blocks" */
+.form-control, .form-select, textarea,
+input[type="text"], input[type="email"], input[type="password"], input[type="number"],
+input[type="date"], input[type="datetime-local"], input[type="search"]{
+  background: rgba(47,111,237,0.06) !important;  /* <-- blu e lehtë */
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.form-control::placeholder, textarea::placeholder{
+  color: rgba(15,31,58,0.45) !important;
+}
+
+.form-control:focus, .form-select:focus, textarea:focus,
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="number"]:focus,
+input[type="date"]:focus, input[type="datetime-local"]:focus, input[type="search"]:focus{
+  border-color: var(--sky) !important;
+  box-shadow: 0 0 0 .2rem rgba(47,111,237,.22) !important;
+  background: rgba(47,111,237,0.10) !important;
+}
+
+/* Fix: tables sometimes force white backgrounds */
+table .form-control, table .form-select, table textarea{
+  background: rgba(47,111,237,0.06) !important;
+}
+
+/* CHECKBOX/RADIO FIX – clickable + visible */
+.form-check-input{
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+  width: 1.15rem;
+  height: 1.15rem;
+  cursor: pointer;
+  border: 1px solid rgba(15,31,58,0.25);
+  background-color: #fff;
+}
+.form-check-label{ cursor: pointer; }
+
+/* File input shouldn't be tinted weird */
+input[type="file"].form-control{
+  background: #fff !important;
+}
+
+/* List group (admin dashboard links) */
+.list-group-item{
+  background: #ffffff !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+.list-group-item:hover{
+  background: rgba(47,111,237,0.08) !important;
+  border-color: rgba(47,111,237,0.35) !important;
+  color: var(--text) !important;
+}
+
+/* Buttons - unify */
+.btn{
+  border-radius: 12px !important;
+  font-weight: 600;
+  letter-spacing: .2px;
+  transition: 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+/* Default buttons look (blue tonal) */
+.btn,
+.btn-primary,
+.btn-outline-primary,
+.btn-secondary,
+.btn-outline-secondary{
+  background: rgba(47,111,237,0.10) !important;
+  border: 1px solid rgba(47,111,237,0.28) !important;
+  color: var(--text) !important;
+}
+
+.btn:hover{
+  background: var(--sky) !important;
+  border-color: var(--sky) !important;
+  color: #ffffff !important;
+}
+
+/* Keep semantic colors for danger/success */
+.btn-danger{
+  background: rgba(224,75,90,0.14) !important;
+  border: 1px solid rgba(224,75,90,0.38) !important;
+  color: #7a1f27 !important;
+}
+.btn-danger:hover{
+  background: var(--danger) !important;
+  border-color: var(--danger) !important;
+  color: #fff !important;
+}
+
+.btn-success{
+  background: rgba(47,143,91,0.14) !important;
+  border: 1px solid rgba(47,143,91,0.34) !important;
+  color: #1f5a3a !important;
+}
+.btn-success:hover{
+  background: var(--success) !important;
+  border-color: var(--success) !important;
+  color: #fff !important;
+}
+
+/* Badges */
+.badge{ border-radius: 999px !important; }
+
+/* Topbar */
+.admin-topbar{
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 22px rgba(15,31,58,0.05);
+}
+
+/* Main width */
+.admin-page{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Inbox / chat (admin) */
+.inbox-panel{
+  background: var(--panel) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px;
+}
+.inbox-thread{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(47,111,237,0.04);
+}
+.inbox-thread.active{
+  background: rgba(47,111,237,0.10);
+  border-color: rgba(47,111,237,0.45);
+}
+.inbox-scroll{
+  max-height: 520px;
+  overflow: auto;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+}
+.chat-bubble{
+  padding: 10px 12px;
+  border-radius: 12px;
+  max-width: 92%;
+  border: 1px solid var(--border);
+}
+.chat-me{
+  margin-left: auto;
+  background: rgba(47,111,237,0.16);
+}
+.chat-them{
+  margin-right: auto;
+  background: rgba(15,31,58,0.04);
+}
+.chat-meta{
+  font-size: 12px;
+  color: rgba(15,31,58,0.55);
+}

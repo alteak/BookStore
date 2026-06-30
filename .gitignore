@@ -1,0 +1,18 @@
+# Sensitive config files
+config.php
+.env
+
+# Uploads / user-generated files
+assets/uploads/profile_pictures/
+assets/uploads/covers/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log

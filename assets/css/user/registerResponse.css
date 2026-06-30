@@ -1,0 +1,97 @@
+/* Registration Handler Response Styles */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e8d4b8 0%, #dcc4a8 100%);
+    font-family: 'Merriweather Sans', Arial, sans-serif;
+    padding: 20px;
+}
+
+.card {
+    width: min(460px, 100%);
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+    padding: 28px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin-bottom: 18px;
+}
+
+.badge-success {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.badge-error {
+    background: #f8d7da;
+    color: #842029;
+}
+
+h1 {
+    margin: 0 0 12px;
+    font-size: 26px;
+    color: #111;
+}
+
+p {
+    margin: 0 0 16px;
+    color: #444;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.note {
+    font-size: 13px;
+    color: #666;
+}
+
+.progress {
+    height: 6px;
+    width: 100%;
+    background: #eee;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 14px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #f4623a;
+    width: 0;
+}
+
+.progress-bar-5s {
+    animation: load 5s linear forwards;
+}
+
+@keyframes load {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 18px;
+    background: #f4623a;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(244, 98, 58, 0.35);
+}

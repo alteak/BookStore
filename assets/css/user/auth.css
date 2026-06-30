@@ -1,0 +1,94 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e8d4b8 0%, #dcc4a8 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Auth container styles */
+.forgot-container {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.forgot-container h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.forgot-container p {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.forgot-container input[type="email"],
+.forgot-container input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.forgot-container input[type="email"]:focus,
+.forgot-container input[type="password"]:focus {
+    border-color: #f4623a;
+    outline: none;
+}
+
+.forgot-container button {
+    width: 100%;
+    padding: 12px;
+    background: #f4623a;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.forgot-container button:hover {
+    background: #e0521f;
+}
+
+.forgot-container a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #f4623a;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-container a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 480px) {
+    .forgot-container {
+        padding: 30px 20px;
+    }
+
+    .forgot-container h2 {
+        font-size: 22px;
+    }
+}
